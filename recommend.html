@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>music recommendation</title>
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/recommend.css')}}" >
+</head>
+<body>
+<br> <br>
+<div class="song">
+    <h2 align="center"> Your current song is playing</h2>
+    <br>
+</div>
+<div class="image" >
+
+    <audio controls>
+         <source src="{{items}}" type="audio/ogg">
+        Your browser does not support the audio tag.
+    </audio>
+
+</div>
+
+
+
+<br>
+<div class="header">
+    <h2> Your recommended song </h2>
+</div>
+
+<br>
+<div class="recom">
+
+
+ {% for key,data in list.items() %}
+    <div class="card">
+        <img src="{{url_for('static', filename='media/my.png')}}" alt="Avatar" style="width:100%">
+        <div class="container">
+
+
+                    <h4><b>{{data.filename}}</b></h4>
+                     <p>{{data.genre}}</p>
+            <form action="{{url_for('recommend')}}" method="POST">
+                <input type="submit" name="a" value="{{data.filepath}}" placeholder="submit">
+            </form>
+
+
+
+        </div>
+    </div>
+{% endfor %}
+</div>
+</body>
+</html>

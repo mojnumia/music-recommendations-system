@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" >
+</head>
+<body>
+<div class="main">
+   <div class="gallery">
+        <img src="{{url_for('static', filename='media/my.png')}}">
+        <div class="sub">
+            <form action="{{url_for('recommend')}}" method="POST">
+                <select name="a">
+                    <option value="static/music/classical.00003.wav">classical song</option>
+                </select>
+                <input type="submit" value="Play">
+            </form>
+        </div>
+    </div>
+
+        <div class="gallery">
+        <img src="{{url_for('static', filename='media/my.png')}}">
+        <div class="sub">
+           <form action="{{url_for('recommend')}}" method="POST">
+                <select name="a">
+                    <option value="static/music/hiphop.00008.wav">hiphop</option>
+                </select>
+                <input type="submit" value="Play">
+           </form>
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="{{url_for('static', filename='media/my.png')}}">
+        <div class="sub">
+                        <form action="{{url_for('recommend')}}" method="POST">
+                <select name="a">
+                    <option value="static/music/metal.00008.wav">metal song</option>
+                </select>
+                <input type="submit" value="Play">
+            </form>
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="{{url_for('static', filename='media/my.png')}}">
+        <div class="sub">
+                        <form action="{{url_for('recommend')}}" method="POST">
+                <select name="a">
+                    <option value="static/music/rock.00018.wav">rock song</option>
+                </select>
+                <input type="submit" value="Play">
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+</body>
+</html>
